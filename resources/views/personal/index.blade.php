@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <a href="personal/create" class="btn btn-primary mb-3">Nuevo</a>
+    <a href="{{ route('personal.create') }}" class="btn btn-primary mb-3">Nuevo</a>
 
     <table id="personals" class="table table-dark" >
         <thead class="bg-primary text-white">
@@ -27,7 +27,7 @@
         <tbody>
             @foreach ($personals as $personal)
                 <tr>
-                    <td>{{ $personal->id_personal }}</td>
+                    <td>{{ $personal->id }}</td>
                     <td>{{ $personal->nombre }}</td>
                     <td>{{ $personal->apellido }}</td>
                     <td>{{ $personal->cargo }}</td>
@@ -35,8 +35,9 @@
                     <td>{{ $personal->tipo_plaza }}</td>
                     <td>{{ $personal->dni }}</td>
                     <td>{{ $personal->jor_lab }}</td>
+                    <td>{{ $personal->estado }}</td>
                     <td>
-                        <a class="btn btn_info">Editar</a>
+                        <a href="{{ route('personal.edit', $personal->id) }}" class="btn btn_primary mb-3">Editar</a>
                         <button class="btn btn-danger">Borrar</button>
                     </td>
                 </tr>

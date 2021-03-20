@@ -11,4 +11,5 @@ class Personal extends Model
     
     //especificando tabla
     //protected $table = "personals";
+
 }

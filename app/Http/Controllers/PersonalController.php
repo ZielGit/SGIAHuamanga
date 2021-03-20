@@ -10,8 +10,12 @@ class PersonalController extends Controller
     
     public function index()
     {
+        /*
         $personals = Personal::all();
-        return view('personal.index')->with('personals',$personals);
+        return view('personal.index')->with('personals',$personals);*/
+        $personals = Personal::all();
+        return view('personal.index', compact('personals'));
+
     }
 
     /**
@@ -40,6 +44,7 @@ class PersonalController extends Controller
         $personals->tipo_plaza = $request->get('plaza');
         $personals->dni = $request->get('dni');
         $personals->jor_lab = $request->get('jornada');
+        $personals->estado = $request->get('estado');
 
         $personals->save();
 
@@ -63,9 +68,13 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Personal $personal)
     {
-        //
+        /*
+        $personal = Personal::find($id_personal);
+        return view('personal.edit')->with('personal',$personal);*/
+
+        return view('personal.edit', compact('personal'));
     }
 
     /**
@@ -75,9 +84,23 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Personal $personal)
     {
-        //
+        $personal->nombre = $request->nombre;
+        $personal->apellido = $request->apellido;
+        $personal->cargo = $request->cargo;
+        $personal->condicion = $request->condicion;
+        $personal->tipo_plaza = $request->tipo_plaza;
+        $personal->dni = $request->dni;
+        $personal->jor_lab = $request->jor_lab;
+        $personal->estado = $request->estado;
+
+        $personal->save();
+
+        /*tambien podriamos lo de arriba por
+        $personal->update($request->all());
+        */
+        return redirect('/');
     }
 
     /**

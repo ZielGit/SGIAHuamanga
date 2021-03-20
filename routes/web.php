@@ -25,7 +25,9 @@ Route::get('/', [PersonalController::class, 'index']);
 Route::get('personal/create', [PersonalController::class, 'create']);
 */
 Route::resource('personal',PersonalController::class);
-
+/*
+Route::get('personal/{personal}/edit', [PersonalController::class, 'edit'])->parameter($personal);
+*/
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

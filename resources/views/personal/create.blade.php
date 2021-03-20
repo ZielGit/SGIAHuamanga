@@ -35,8 +35,12 @@
             <label for="" class="form-label">Jornada Laboral</label>
             <input id="jornada" name="jornada" type="text" class="form-control" tabindex="7">
         </div>
-        <a href="/" class="btn btn-secondary" tabindex="8">Cancelar</a>
-        <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>
+        <div class="mb-3">
+            <label for="" class="form-label">Estado</label>
+            <input id="estado" name="estado" type="text" class="form-control" tabindex="8">
+        </div>
+        <a href="/" class="btn btn-secondary" tabindex="9">Cancelar</a>
+        <button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
     </form>
 @stop
 
