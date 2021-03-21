@@ -10,35 +10,59 @@
         @method('PUT')
         <div class="mb-3">
             <label for="" class="form-label">Nombre</label>
-            <input id="nombre" name="nombre" type="text" class="form-control" value="{{$personal->nombre}}">
+            <input name="nombre" type="text" class="form-control" value="{{ old('nombre',$personal->nombre) }}">
+            @error('nombre')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Apellido</label>
-            <input id="apellido" name="apellido" type="text" class="form-control" value="{{$personal->apellido}}">
+            <input name="apellido" type="text" class="form-control" value="{{ old('apellido',$personal->apellido) }}">
+            @error('apellido')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Cargo</label>
-            <input id="cargo" name="cargo" type="text" class="form-control" value="{{$personal->cargo}}">
+            <input name="cargo" type="text" class="form-control" value="{{ old('cargo',$personal->cargo) }}">
+            @error('cargo')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Condición</label>
-            <input id="condicion" name="condicion" type="text" class="form-control" value="{{$personal->condicion}}">
+            <input name="condicion" type="text" class="form-control" value="{{ old('condicion',$personal->condicion) }}">
+            @error('condicion')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Tipo de Plaza</label>
-            <input id="plaza" name="tipo_plaza" type="text" class="form-control" value="{{$personal->tipo_plaza}}">
+            <input name="tipo_plaza" type="text" class="form-control" value="{{ old('tipo_plaza',$personal->tipo_plaza) }}">
+            @error('tipo_plaza')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">DNI</label>
-            <input id="dni" name="dni" type="text" class="form-control" value="{{$personal->dni}}">
+            <input name="dni" type="text" class="form-control" value="{{ old('dni',$personal->dni) }}">
+            @error('dni')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Jornada Laboral</label>
-            <input id="jornada" name="jor_lab" type="text" class="form-control" value="{{$personal->jor_lab}}">
+            <input name="jor_lab" type="text" class="form-control" value="{{ old('jor_lab',$personal->jor_lab) }}">
+            @error('jor_lab')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Estado</label>
-            <input id="estado" name="estado" type="text" class="form-control" value="{{$personal->estado}}">
+            <input name="estado" type="text" class="form-control" value="{{ old('estado',$personal->estado) }}">
+            @error('estado')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <a href="/" class="btn btn-secondary" tabindex="8">Cancelar</a>
         <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>

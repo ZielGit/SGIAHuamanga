@@ -36,6 +36,17 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre'=>'required',
+            'apellido'=>'required',
+            'cargo'=>'required',
+            'condicion'=>'required',
+            'plaza'=>'required',
+            'dni'=>'required',
+            'jornada'=>'required',
+            'estado'=>'required'
+        ]);
+
         $personals = new Personal();
         $personals->nombre = $request->get('nombre');
         $personals->apellido = $request->get('apellido');
@@ -48,6 +59,9 @@ class PersonalController extends Controller
 
         $personals->save();
 
+        /*tambien podriamos lo de arriba por
+        Personal::create($request->all());
+        */
         return redirect('/');
     }
 
@@ -86,6 +100,17 @@ class PersonalController extends Controller
      */
     public function update(Request $request, Personal $personal)
     {
+        $request->validate([
+            'nombre'=>'required',
+            'apellido'=>'required',
+            'cargo'=>'required',
+            'condicion'=>'required',
+            'tipo_plaza'=>'required',
+            'dni'=>'required',
+            'jor_lab'=>'required',
+            'estado'=>'required'
+        ]);
+
         $personal->nombre = $request->nombre;
         $personal->apellido = $request->apellido;
         $personal->cargo = $request->cargo;

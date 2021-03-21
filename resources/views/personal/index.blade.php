@@ -37,7 +37,7 @@
                     <td>{{ $personal->jor_lab }}</td>
                     <td>{{ $personal->estado }}</td>
                     <td>
-                        <a href="{{ route('personal.edit', $personal->id) }}" class="btn btn_primary mb-3">Editar</a>
+                        <a href="{{ route('personal.edit', $personal->id) }}" class="btn btn_primary mb-2">Editar</a>
                         <button class="btn btn-danger">Borrar</button>
                     </td>
                 </tr>

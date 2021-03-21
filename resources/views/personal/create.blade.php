@@ -9,35 +9,60 @@
     @csrf
         <div class="mb-3">
             <label for="" class="form-label">Nombre</label>
-            <input id="nombre" name="nombre" type="text" class="form-control" tabindex="1">
+            <input name="nombre" type="text" class="form-control" tabindex="1" value="{{old('nombre')}}">
+            @error('nombre')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
+        
         <div class="mb-3">
             <label for="" class="form-label">Apellido</label>
-            <input id="apellido" name="apellido" type="text" class="form-control" tabindex="2">
+            <input name="apellido" type="text" class="form-control" tabindex="2" value="{{old('apellido')}}">
+            @error('apellido')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Cargo</label>
-            <input id="cargo" name="cargo" type="text" class="form-control" tabindex="3">
+            <input name="cargo" type="text" class="form-control" tabindex="3" value="{{old('cargo')}}">
+            @error('cargo')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Condición</label>
-            <input id="condicion" name="condicion" type="text" class="form-control" tabindex="4">
+            <input name="condicion" type="text" class="form-control" tabindex="4" value="{{old('condicion')}}">
+            @error('condicion')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Tipo de Plaza</label>
-            <input id="plaza" name="plaza" type="text" class="form-control" tabindex="5">
+            <input name="plaza" type="text" class="form-control" tabindex="5" value="{{old('plaza')}}">
+            @error('plaza')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">DNI</label>
-            <input id="dni" name="dni" type="text" class="form-control" tabindex="6">
+            <input name="dni" type="text" class="form-control" tabindex="6" value="{{old('dni')}}">
+            @error('dni')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Jornada Laboral</label>
-            <input id="jornada" name="jornada" type="text" class="form-control" tabindex="7">
+            <input name="jornada" type="text" class="form-control" tabindex="7" value="{{old('jornada')}}">
+            @error('jornada')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Estado</label>
-            <input id="estado" name="estado" type="text" class="form-control" tabindex="8">
+            <input name="estado" type="text" class="form-control" tabindex="8" value="{{old('estado')}}">
+            @error('estado')
+                <small>*{{$message}}</small>
+            @enderror
         </div>
         <a href="/" class="btn btn-secondary" tabindex="9">Cancelar</a>
         <button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
