@@ -4,8 +4,10 @@
 
 @section('content_header')
     <h2>Añadir Personal</h2>
+@stop
 
-    <form action="/personal" method="post">
+@section('content')
+<form action="/personal" method="post">
     @csrf
         <div class="mb-3">
             <label for="" class="form-label">Nombre</label>
@@ -14,7 +16,6 @@
                 <small>*{{$message}}</small>
             @enderror
         </div>
-        
         <div class="mb-3">
             <label for="" class="form-label">Apellido</label>
             <input name="apellido" type="text" class="form-control" tabindex="2" value="{{old('apellido')}}">
@@ -67,10 +68,6 @@
         <a href="/" class="btn btn-secondary" tabindex="9">Cancelar</a>
         <button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
     </form>
-@stop
-
-@section('content')
-    
 @stop
 
 @section('css')

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AsistenciaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonalController;
 
@@ -21,13 +22,17 @@ use App\Http\Controllers\PersonalController;
 });*/
 
 Route::get('/', [PersonalController::class, 'index']);
-/*
-Route::get('personal/create', [PersonalController::class, 'create']);
-*/
+
+//Route::get('personal/create', [PersonalController::class, 'create']);
+
 Route::resource('personal',PersonalController::class);
-/*
-Route::get('personal/{personal}/edit', [PersonalController::class, 'edit'])->parameter($personal);
-*/
+
+//Route::get('personal/{personal}/edit', [PersonalController::class, 'edit'])->parameter($personal);
+
+//Route::get('/asistencia/index', [AsistenciaController::class, 'index']);
+
+Route::resource('asistencia',AsistenciaController::class);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

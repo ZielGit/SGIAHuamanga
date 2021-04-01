@@ -59,7 +59,8 @@ class PersonalController extends Controller
 
         $personals->save();
 
-        /*tambien podriamos lo de arriba por
+        /*tambien cambiariamos lo de arriba por este codigo.
+        Comprender asignación masiva si se quiere usar este codigo para seguridad
         Personal::create($request->all());
         */
         return redirect('/');
@@ -134,8 +135,10 @@ class PersonalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Personal $personal)
     {
-        //
+        $personal->delete();
+
+        return redirect('/');
     }
 }
