@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Personal;
+use App\Http\Requests\StorePersonal;
 
 class PersonalController extends Controller
 {
@@ -34,18 +35,8 @@ class PersonalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePersonal $request)
     {
-        $request->validate([
-            'nombre'=>'required',
-            'apellido'=>'required',
-            'cargo'=>'required',
-            'condicion'=>'required',
-            'plaza'=>'required',
-            'dni'=>'required',
-            'jornada'=>'required',
-            'estado'=>'required'
-        ]);
 
         $personals = new Personal();
         $personals->nombre = $request->get('nombre');
