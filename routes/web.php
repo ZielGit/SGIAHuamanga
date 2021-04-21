@@ -15,7 +15,6 @@ use App\Http\Controllers\PersonalController;
 |
 */
 
-
 //el auth login debe ir en routeserviceprovider si quiere pedir logeo primero
 /*Route::get('/', function () {
     return view('auth.login');

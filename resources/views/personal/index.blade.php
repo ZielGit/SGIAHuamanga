@@ -51,12 +51,18 @@
      
 @stop
 
+@section('plugins.Datatables', true)
+
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        $(document).ready( function () {
+            $('#personals').DataTable();
+        } ); 
+    </script>
 @stop
 
 
