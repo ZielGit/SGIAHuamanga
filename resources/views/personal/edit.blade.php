@@ -5,7 +5,7 @@
 @section('content_header')
     <h2>Editar Personal</h2>
 
-    <form action="{{ route('personal.update', $personal->id) }}" method="post">
+    <form action="{{route('personal.update', $personal->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -64,7 +64,7 @@
                 <small>*{{$message}}</small>
             @enderror
         </div>
-        <a href="/" class="btn btn-secondary" tabindex="8">Cancelar</a>
+        <a href="{{route('personal.index')}}" class="btn btn-secondary" tabindex="8">Cancelar</a>
         <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>
     </form>
 @stop

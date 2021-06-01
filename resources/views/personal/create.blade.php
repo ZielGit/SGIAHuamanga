@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="/personal" method="post">
+<form action="{{route('personal.store')}}" method="post">
     @csrf
     <div class="card">
         <div class="card-body">
@@ -69,7 +69,7 @@
                     <small>*{{$message}}</small>
                 @enderror
             </div>
-            <a href="/" class="btn btn-secondary" tabindex="9">Cancelar</a>
+            <a href="{{route('personal.index')}}" class="btn btn-secondary" tabindex="9">Cancelar</a>
             <button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
         </div>
     </div>

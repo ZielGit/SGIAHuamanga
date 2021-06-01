@@ -7,8 +7,7 @@
 @stop
 
 @section('content')
-    {{-- cambie la manera en la que pongo la ruta --}}
-    <form action="{{ route('asistencia.index') }}" method="post">
+    <form action="{{route('asistencia.store')}}" method="post">
         @csrf
         <div>
             <label for="">Personal</label>
@@ -56,7 +55,7 @@
         <br>
         </table> --}}
         <button type="submit" class="btn btn-success">Marcar</button>
-        <a href="/asistencia" class="btn btn-secondary">Regresar</a>
+        <a href="{{route('asistencia.index')}}" class="btn btn-secondary">Regresar</a>
     </form>
 @stop
 
